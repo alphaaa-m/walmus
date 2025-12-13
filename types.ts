@@ -4,7 +4,7 @@ export interface Division {
   description: string;
   path: string;
   color: string;
-  iconName: 'Activity' | 'Utensils' | 'Shirt';
+  iconName: 'Activity' | 'Utensils' | 'Shirt' | 'Code';
   image: string;
 }
 

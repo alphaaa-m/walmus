@@ -31,9 +31,55 @@ export const Garments: React.FC = () => {
         </div>
       </div>
 
-      {/* Interactive Showroom */}
-      <div className="container mx-auto px-6 py-24">
-        
+      {/* Collection Section */}
+      <section id="collection" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-purple"></span>
+            COLLECTION
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Explore our latest smart-wear collections featuring adaptive technology.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          {[
+            { title: 'Performance Line', desc: 'Optimized for athletic performance', price: 'Credits: 1200' },
+            { title: 'Executive Series', desc: 'Professional smart-wear for business', price: 'Credits: 1500' },
+            { title: 'Casual Collection', desc: 'Everyday adaptive clothing', price: 'Credits: 800' },
+          ].map((item, i) => (
+            <div key={i} className="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 hover:border-neon-purple/50 transition-colors">
+              <div className="h-48 overflow-hidden">
+                <img src={`https://picsum.photos/600/400?random=${600+i}`} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold mb-2 group-hover:text-neon-purple transition-colors">{item.title}</h3>
+                <p className="text-slate-400 text-sm mb-4">{item.desc}</p>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-neon-purple">{item.price}</span>
+                  <button className="px-4 py-2 bg-white/5 hover:bg-neon-purple hover:text-black rounded text-xs font-display tracking-wider uppercase transition-all">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Tech Section */}
+      <section id="tech" className="container mx-auto px-6 py-24 scroll-mt-20 bg-dark-900/50">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-purple"></span>
+            TECH
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Advanced fabric technology integrated into every garment.
+          </p>
+        </div>
+
         <div className="flex flex-col md:flex-row gap-12">
           {/* Sidebar controls */}
           <div className="w-full md:w-1/3 space-y-6">
@@ -81,8 +127,35 @@ export const Garments: React.FC = () => {
              </div>
           </div>
         </div>
+      </section>
 
-      </div>
+      {/* Fitting Section */}
+      <section id="fitting" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-purple"></span>
+            FITTING
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Advanced fitting technology ensures perfect fit for every body type.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            { title: '3D Body Scanning', desc: 'Precise measurements using advanced scanning technology', icon: '📐' },
+            { title: 'Custom Tailoring', desc: 'Personalized fit based on your unique measurements', icon: '✂️' },
+            { title: 'Virtual Try-On', desc: 'See how garments look before ordering', icon: '👔' },
+            { title: 'Size Recommendations', desc: 'AI-powered sizing suggestions for optimal fit', icon: '🤖' },
+          ].map((fitting, i) => (
+            <div key={i} className="glass-panel p-8 rounded-xl border-l-4 border-neon-purple/50 hover:border-neon-purple transition-all">
+              <div className="text-4xl mb-4">{fitting.icon}</div>
+              <h3 className="font-display text-xl font-bold mb-3">{fitting.title}</h3>
+              <p className="text-slate-400">{fitting.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </motion.div>
   );
 };

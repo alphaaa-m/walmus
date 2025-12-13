@@ -7,6 +7,7 @@ import { Home } from './pages/Home';
 import { Pharma } from './pages/Pharma';
 import { Foods } from './pages/Foods';
 import { Garments } from './pages/Garments';
+import { Tech } from './pages/Tech';
 
 // AnimatedRoutes component to handle page transitions
 const AnimatedRoutes: React.FC = () => {
@@ -19,6 +20,7 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/pharma" element={<Pharma />} />
         <Route path="/foods" element={<Foods />} />
         <Route path="/garments" element={<Garments />} />
+        <Route path="/tech" element={<Tech />} />
       </Routes>
     </AnimatePresence>
   );

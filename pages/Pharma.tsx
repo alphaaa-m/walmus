@@ -37,8 +37,18 @@ export const Pharma: React.FC = () => {
         </div>
       </div>
 
-      {/* Features Grid */}
-      <div className="container mx-auto px-6 py-24">
+      {/* Research Section */}
+      <section id="research" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-cyan"></span>
+            RESEARCH
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Cutting-edge research in synthetic biology and computational medicine.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {[
             { icon: Microscope, title: "Molecular Precision", desc: "Targeted delivery systems down to the atomic level." },
@@ -59,13 +69,59 @@ export const Pharma: React.FC = () => {
             </motion.div>
           ))}
         </div>
+      </section>
+
+      {/* Solutions Section */}
+      <section id="solutions" className="container mx-auto px-6 py-24 scroll-mt-20 bg-dark-900/50">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-cyan"></span>
+            SOLUTIONS
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Comprehensive pharmaceutical solutions for modern healthcare challenges.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            { title: 'Therapeutic Solutions', desc: 'Advanced treatments for complex diseases', icon: Activity },
+            { title: 'Preventive Medicine', desc: 'Proactive health management systems', icon: Shield },
+            { title: 'Personalized Treatment', desc: 'Tailored medical solutions based on genetics', icon: Microscope },
+            { title: 'Emergency Response', desc: 'Rapid deployment medical systems', icon: Zap },
+          ].map((solution, i) => {
+            const IconComponent = solution.icon;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="glass-panel p-8 rounded-xl border-l-4 border-neon-cyan/50 hover:border-neon-cyan transition-all"
+              >
+                <IconComponent className="w-10 h-10 text-neon-cyan mb-4" />
+                <h3 className="font-display text-xl font-bold mb-3">{solution.title}</h3>
+                <p className="text-slate-400">{solution.desc}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Labs Section */}
+      <section id="labs" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-cyan"></span>
+            LABS
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            State-of-the-art research facilities and latest innovations.
+          </p>
+        </div>
 
         {/* Product Showcase */}
-        <h2 className="font-display text-3xl font-bold mb-12 flex items-center gap-4">
-          <span className="w-8 h-1 bg-neon-cyan"></span>
-          LATEST INNOVATIONS
-        </h2>
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {products.map((prod, i) => (
             <div key={i} className="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 hover:border-neon-cyan/50 transition-colors">
@@ -85,7 +141,7 @@ export const Pharma: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </motion.div>
   );
 };

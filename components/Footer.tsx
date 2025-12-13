@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Hexagon, Twitter, Linkedin, Facebook, Activity, Utensils, Shirt } from 'lucide-react';
+import { Hexagon, Twitter, Linkedin, Facebook, Activity, Utensils, Shirt, Code } from 'lucide-react';
+import { useNavigation } from '../contexts/NavigationContext';
 
 export const Footer: React.FC = () => {
   const location = useLocation();
   const path = location.pathname;
+  const { isStandalone } = useNavigation();
 
   const getFooterConfig = () => {
     if (path.includes('/pharma')) {
@@ -33,6 +35,15 @@ export const Footer: React.FC = () => {
         Icon: Shirt,
         color: "text-neon-purple",
         contact: "apparel@walmus.corp"
+      };
+    } else if (path.includes('/tech')) {
+      return {
+        brand: 'WALMUS TECH',
+        desc: "Cutting-edge technology solutions for the digital future.",
+        showDivisions: false,
+        Icon: Code,
+        color: "text-neon-cyan",
+        contact: "tech@walmus.corp"
       };
     } else {
       return {
@@ -73,14 +84,47 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Conditional Divisions Column */}
-          {config.showDivisions && (
+          {/* Conditional Divisions Column - Only show on home page, not in standalone mode */}
+          {config.showDivisions && !isStandalone && (
             <div>
               <h4 className="font-display font-bold text-white mb-6">DIVISIONS</h4>
               <ul className="space-y-4">
-                <li><Link to="/pharma" className="text-slate-400 hover:text-neon-cyan transition-colors">Pharma</Link></li>
-                <li><Link to="/foods" className="text-slate-400 hover:text-neon-green transition-colors">Foods</Link></li>
-                <li><Link to="/garments" className="text-slate-400 hover:text-neon-purple transition-colors">Garments</Link></li>
+                <li>
+                  <Link 
+                    to="/pharma" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-cyan transition-colors"
+                  >
+                    Pharma
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/foods" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-green transition-colors"
+                  >
+                    Foods
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/garments" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-purple transition-colors"
+                  >
+                    Garments
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/tech" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-cyan transition-colors"
+                  >
+                    Tech
+                  </Link>
+                </li>
               </ul>
             </div>
           )}

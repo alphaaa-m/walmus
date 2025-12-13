@@ -30,6 +30,15 @@ const divisions: Division[] = [
     color: 'purple',
     iconName: 'Shirt',
     image: 'https://picsum.photos/800/600?random=103'
+  },
+  {
+    id: '4',
+    name: 'TECH',
+    description: 'Cutting-edge technology solutions including backend, frontend, and full-stack development services.',
+    path: '/tech',
+    color: 'cyan',
+    iconName: 'Code',
+    image: 'https://picsum.photos/800/600?random=104'
   }
 ];
 
@@ -88,7 +97,7 @@ export const Home: React.FC = () => {
             <div className="w-20 h-1 bg-neon-cyan" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {divisions.map((div, idx) => (
               <DivisionCard key={div.id} division={div} index={idx} />
             ))}

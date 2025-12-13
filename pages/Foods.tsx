@@ -31,11 +31,52 @@ export const Foods: React.FC = () => {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-6 py-24">
-        
+      {/* Menu Section */}
+      <section id="menu" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-green"></span>
+            MENU
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Our complete range of lab-grown nutrition products.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Protein Synthesis', desc: 'Complete amino acid profiles', price: 'Credits: 250' },
+            { title: 'Vitamin Complex', desc: 'Essential nutrients in optimal ratios', price: 'Credits: 180' },
+            { title: 'Mineral Blend', desc: 'Bioavailable mineral supplements', price: 'Credits: 150' },
+          ].map((item, i) => (
+            <div key={i} className="group glass-panel p-6 rounded-xl border border-white/5 hover:border-neon-green/50 transition-all">
+              <h3 className="font-display text-xl font-bold mb-2 group-hover:text-neon-green transition-colors">{item.title}</h3>
+              <p className="text-slate-400 text-sm mb-4">{item.desc}</p>
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-neon-green">{item.price}</span>
+                <button className="px-4 py-2 bg-white/5 hover:bg-neon-green hover:text-black rounded text-xs font-display tracking-wider uppercase transition-all">
+                  Order
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Nutrition Section */}
+      <section id="nutrition" className="container mx-auto px-6 py-24 scroll-mt-20 bg-dark-900/50">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-green"></span>
+            NUTRITION
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Advanced nutrition science for optimal health and performance.
+          </p>
+        </div>
+
         {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24 border-y border-white/10 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 border-y border-white/10 py-12">
            {[
              { label: "Purity", val: "99.9%" },
              { label: "Efficiency", val: "400%" },
@@ -89,7 +130,35 @@ export const Foods: React.FC = () => {
             <img src="https://picsum.photos/600/600?random=401" alt="Future Food" className="relative z-10 rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Sources Section */}
+      <section id="sources" className="container mx-auto px-6 py-24 scroll-mt-20">
+        <div className="mb-16">
+          <h2 className="font-display text-3xl font-bold mb-4 flex items-center gap-4">
+            <span className="w-8 h-1 bg-neon-green"></span>
+            SOURCES
+          </h2>
+          <p className="text-slate-400 max-w-2xl">
+            Sustainable sourcing and production methods for our nutrition products.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            { title: 'Lab Facilities', desc: 'State-of-the-art sterile environments for cellular agriculture', icon: '🧪' },
+            { title: 'Research Partners', desc: 'Collaborations with leading nutrition science institutions', icon: '🔬' },
+            { title: 'Quality Control', desc: 'Rigorous testing and certification processes', icon: '✅' },
+            { title: 'Distribution Network', desc: 'Global supply chain for efficient delivery', icon: '🌍' },
+          ].map((source, i) => (
+            <div key={i} className="glass-panel p-8 rounded-xl border-l-4 border-neon-green/50 hover:border-neon-green transition-all">
+              <div className="text-4xl mb-4">{source.icon}</div>
+              <h3 className="font-display text-xl font-bold mb-3">{source.title}</h3>
+              <p className="text-slate-400">{source.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </motion.div>
   );
 };

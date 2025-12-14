@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Activity, Utensils, Shirt, Code, LucideIcon } from 'lucide-react';
+import { ArrowRight, Activity, Utensils, Shirt, Code, GraduationCap, LucideIcon } from 'lucide-react';
 import { Division } from '../types';
 
 interface DivisionCardProps {
@@ -14,6 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
   'Utensils': Utensils,
   'Shirt': Shirt,
   'Code': Code,
+  'GraduationCap': GraduationCap,
 };
 
 export const DivisionCard: React.FC<DivisionCardProps> = ({ division, index }) => {
@@ -66,19 +67,31 @@ export const DivisionCard: React.FC<DivisionCardProps> = ({ division, index }) =
 
           <div className="relative z-10 flex flex-col h-full justify-between">
             <div>
-              <div className={`w-16 h-16 rounded-2xl glass-panel flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className={`w-8 h-8 text-white ${getColorClasses(division.color)}`} />
+              <div className="flex items-start justify-between mb-4">
+                <div className={`w-16 h-16 rounded-2xl glass-panel flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className={`w-8 h-8 text-white ${getColorClasses(division.color)}`} />
+                </div>
+                <span className={`px-3 py-1 rounded-full text-xs font-display font-bold tracking-wider ${
+                  division.status === 'Launching Soon' 
+                    ? 'bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/50' 
+                    : 'bg-slate-700/50 text-slate-300 border border-slate-600/50'
+                }`}>
+                  {division.status}
+                </span>
               </div>
-              <h3 className="font-display text-3xl font-bold text-white mb-2 tracking-wide group-hover:translate-x-2 transition-transform">
+              <h3 className="font-display text-2xl font-bold text-white mb-2 tracking-wide group-hover:translate-x-2 transition-transform">
                 {division.name}
               </h3>
-              <p className="text-slate-400 group-hover:text-slate-300 transition-colors">
-                {division.description}
+              <p className="text-xs text-slate-500 mb-3 uppercase tracking-wider">
+                {division.industry}
+              </p>
+              <p className="text-slate-400 text-sm mb-3 group-hover:text-slate-300 transition-colors">
+                {division.productsOrServices}
               </p>
             </div>
 
             <div className={`mt-8 flex items-center gap-4 py-3 px-6 rounded-lg w-fit border transition-all duration-300 ${getButtonColor(division.color)}`}>
-              <span className="font-display font-medium tracking-widest uppercase text-sm">Explore Division</span>
+              <span className="font-display font-medium tracking-widest uppercase text-sm">View Division</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </div>
           </div>

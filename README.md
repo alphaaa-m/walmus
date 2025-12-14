@@ -1,14 +1,27 @@
-# WalMus Enterprise
+# WalMus Group
 
-A futuristic multi-industry brand platform featuring Pharma, Foods, Garments, and Tech divisions with an immersive UI. Built with React, TypeScript, and modern web technologies.
+A multi-division business group platform featuring Foods, Pharma, Garments, Tech, and Education divisions. Each division operates independently with specialized teams, offering real products and services in their respective industries.
+
+## About WalMus Group
+
+WalMus Group is a parent company that owns and manages multiple business divisions, each operating in a different industry and handled by specialized teams. The website represents an early-stage brand, but all divisions are intended to become real operating businesses.
+
+**Tagline:** "One Group. Multiple Businesses."
+
+## Divisions
+
+- **WalMus Foods**: Restaurant and fast-food business selling ready-to-eat meals
+- **WalMus Pharma**: Medical retail business selling medicines from licensed manufacturers
+- **WalMus Garments**: Clothing and wearable products such as shirts and pants
+- **WalMus Tech**: Technology services including AI solutions, web development, backend and frontend development
+- **WalMus Education**: Skill-based education, courses, training, and professional guidance
 
 ## Features
 
-- **Pharma Division**: Revolutionizing healthcare with nano-molecular precision
-- **Foods Division**: Sustainable, lab-grown nutrition for peak performance
-- **Garments Division**: Adaptive smart-wear fabrics
-- **Tech Division**: Cutting-edge technology solutions including backend, frontend, and full-stack development
+- **Multi-Division Business Structure**: Clear representation of each division with business-focused content
 - **Standalone Page Architecture**: Pages can be shared directly with isolated navigation
+- **Business Roadmap**: Clear growth and expansion plans for each division
+- **Team & Operations**: Detailed information about how each division operates
 - Smooth page transitions with Framer Motion
 - Modern, responsive design with dark theme
 - Section-based navigation with smooth scrolling
@@ -21,6 +34,7 @@ A futuristic multi-industry brand platform featuring Pharma, Foods, Garments, an
 - React Router DOM
 - Framer Motion
 - Lucide React Icons
+- Tailwind CSS
 
 ## Run Locally
 
@@ -59,12 +73,29 @@ The application supports two access modes:
 
 This allows pages to be shared independently while maintaining full functionality when navigated from the home page.
 
+### Division Page Structure
+
+Each division page follows a consistent structure:
+
+- Business Overview
+- Products or Services
+- Target Customers
+- Team & Operations
+- Future Expansion Plans
+
 ### Navigation
 
-Each division page includes section-based navigation:
-- **Tech**: Services, Solutions, Contact
-- **Pharma**: Research, Solutions, Labs
-- **Foods**: Menu, Nutrition, Sources
-- **Garments**: Collection, Tech, Fitting
+Each division page includes section-based navigation that smoothly scrolls to respective sections on the page.
 
-Navigation items smoothly scroll to their respective sections on the page.
+## Business Information
+
+**Disclaimer:** WalMus Group is an early-stage business group. Individual divisions operate independently under dedicated teams.
+
+**Contact:**
+- General Inquiries: info@walmusgroup.com
+- Partnerships: partnerships@walmusgroup.com
+- Careers: careers@walmusgroup.com
+
+## License
+
+Copyright © 2024 WalMus Group. All rights reserved.

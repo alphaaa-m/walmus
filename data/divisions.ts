@@ -1,0 +1,85 @@
+import { Division } from '../types';
+
+export const divisions: Division[] = [
+  {
+    id: '1',
+    name: 'WalMus Foods',
+    fullName: 'WalMus Foods',
+    description: 'Restaurant and fast-food business offering fresh, ready-to-eat meals with focus on taste, consistency, and exceptional customer experience.',
+    industry: 'Food & Restaurant',
+    productsOrServices: 'Ready-to-eat meals, dine-in, takeaway, and delivery services',
+    targetCustomers: 'General consumers seeking quality fast-food and restaurant dining experiences',
+    team: 'Restaurant and operations teams specializing in food service and customer experience',
+    expansionPlans: 'Establish physical locations, expand menu offerings, and develop delivery infrastructure',
+    status: 'In Setup Phase',
+    path: '/foods',
+    color: 'green',
+    iconName: 'Utensils',
+    image: 'https://picsum.photos/800/600?random=102'
+  },
+  {
+    id: '2',
+    name: 'WalMus Pharma',
+    fullName: 'WalMus Pharma',
+    description: 'Medical retail business providing medicines and healthcare products sourced from licensed manufacturers with full regulatory compliance.',
+    industry: 'Healthcare & Pharmaceuticals',
+    productsOrServices: 'Medicines and healthcare products from licensed manufacturers',
+    targetCustomers: 'Healthcare facilities, pharmacies, and consumers requiring regulated medical products',
+    team: 'Medical retail and operations teams with expertise in pharmaceutical distribution and compliance',
+    expansionPlans: 'Expand product range, establish retail locations, and develop distribution networks',
+    status: 'In Setup Phase',
+    path: '/pharma',
+    color: 'cyan',
+    iconName: 'Activity',
+    image: 'https://picsum.photos/800/600?random=101'
+  },
+  {
+    id: '3',
+    name: 'WalMus Garments',
+    fullName: 'WalMus Garments',
+    description: 'Clothing and wearable products business offering quality shirts, pants, and everyday wear focused on comfort, quality, and affordability.',
+    industry: 'Fashion & Apparel',
+    productsOrServices: 'Shirts, pants, and everyday clothing and wearable products',
+    targetCustomers: 'General consumers seeking quality, comfortable, and affordable clothing',
+    team: 'Retail and operations teams specializing in garment manufacturing and distribution',
+    expansionPlans: 'Expand product lines, establish retail presence, and develop online sales channels',
+    status: 'In Setup Phase',
+    path: '/garments',
+    color: 'purple',
+    iconName: 'Shirt',
+    image: 'https://picsum.photos/800/600?random=103'
+  },
+  {
+    id: '4',
+    name: 'WalMus Tech',
+    fullName: 'WalMus Tech',
+    description: 'Technology services company providing AI solutions, web development, backend and frontend development, and custom technology solutions for businesses.',
+    industry: 'Technology Services',
+    productsOrServices: 'AI solutions, web development, backend systems, frontend development, and custom technology solutions',
+    targetCustomers: 'Businesses requiring technology solutions, web development, and AI integration services',
+    team: 'Engineers and technology specialists with expertise in software development and AI solutions',
+    expansionPlans: 'Expand service offerings, build client portfolio, and develop proprietary technology solutions',
+    status: 'Launching Soon',
+    path: '/tech',
+    color: 'cyan',
+    iconName: 'Code',
+    image: 'https://picsum.photos/800/600?random=104'
+  },
+  {
+    id: '5',
+    name: 'WalMus Education',
+    fullName: 'WalMus Education',
+    description: 'Skill-based education division offering courses, professional training, career guidance, and educational programs to support professional development.',
+    industry: 'Education & Training',
+    productsOrServices: 'Skill-based courses, professional training, career guidance, and educational programs',
+    targetCustomers: 'Individuals seeking professional development, skill enhancement, and career advancement',
+    team: 'Teachers and instructors with expertise in curriculum development and professional training',
+    expansionPlans: 'Develop comprehensive course catalog, establish training facilities, and support Tech and Pharma divisions with specialized training',
+    status: 'In Setup Phase',
+    path: '/education',
+    color: 'purple',
+    iconName: 'GraduationCap',
+    image: 'https://picsum.photos/800/600?random=105'
+  }
+];
+

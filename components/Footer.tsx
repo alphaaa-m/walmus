@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Hexagon, Twitter, Linkedin, Facebook, Activity, Utensils, Shirt, Code } from 'lucide-react';
+import { Hexagon, Twitter, Linkedin, Facebook, Activity, Utensils, Shirt, Code, GraduationCap } from 'lucide-react';
 import { useNavigation } from '../contexts/NavigationContext';
 
 export const Footer: React.FC = () => {
@@ -12,47 +12,56 @@ export const Footer: React.FC = () => {
     if (path.includes('/pharma')) {
       return {
         brand: 'WALMUS PHARMA',
-        desc: "Advancing human longevity through molecular engineering and synthetic biology systems.",
+        desc: "Medical retail business providing medicines and healthcare products from licensed manufacturers with full regulatory compliance.",
         showDivisions: false,
         Icon: Activity,
         color: "text-neon-cyan",
-        contact: "pharma.lab@walmus.corp"
+        contact: "pharma@walmusgroup.com"
       };
     } else if (path.includes('/foods')) {
       return {
         brand: 'WALMUS FOODS',
-        desc: "Sustainable, lab-grown nutrition tailored for peak human performance.",
+        desc: "Restaurant and fast-food business offering fresh, ready-to-eat meals with focus on taste, consistency, and exceptional customer experience.",
         showDivisions: false,
         Icon: Utensils,
         color: "text-neon-green",
-        contact: "nutrition@walmus.corp"
+        contact: "foods@walmusgroup.com"
       };
     } else if (path.includes('/garments')) {
       return {
         brand: 'WALMUS GARMENTS',
-        desc: "Adaptive smart-wear fabrics that respond to environment and vital signs.",
+        desc: "Clothing and wearable products business offering quality shirts, pants, and everyday wear focused on comfort, quality, and affordability.",
         showDivisions: false,
         Icon: Shirt,
         color: "text-neon-purple",
-        contact: "apparel@walmus.corp"
+        contact: "garments@walmusgroup.com"
       };
     } else if (path.includes('/tech')) {
       return {
         brand: 'WALMUS TECH',
-        desc: "Cutting-edge technology solutions for the digital future.",
+        desc: "Technology services company providing AI solutions, web development, backend and frontend development, and custom technology solutions.",
         showDivisions: false,
         Icon: Code,
         color: "text-neon-cyan",
-        contact: "tech@walmus.corp"
+        contact: "tech@walmusgroup.com"
+      };
+    } else if (path.includes('/education')) {
+      return {
+        brand: 'WALMUS EDUCATION',
+        desc: "Skill-based education division offering courses, professional training, career guidance, and educational programs.",
+        showDivisions: false,
+        Icon: GraduationCap,
+        color: "text-neon-purple",
+        contact: "education@walmusgroup.com"
       };
     } else {
       return {
-        brand: 'WALMUS',
-        desc: "Pioneering the future of humanity through advanced pharmaceuticals, sustainable nutrition, and next-gen apparel.",
+        brand: 'WALMUS GROUP',
+        desc: "A multi-division business group operating across food, healthcare, technology, garments, and education. Each division operates independently with specialized teams.",
         showDivisions: true,
         Icon: Hexagon,
         color: "text-neon-cyan",
-        contact: "contact@walmus.corp"
+        contact: "info@walmusgroup.com"
       };
     }
   };
@@ -75,6 +84,11 @@ export const Footer: React.FC = () => {
             <p className="text-slate-400 max-w-sm mb-6">
               {config.desc}
             </p>
+            {path === '/' && (
+              <p className="text-slate-500 text-sm mb-6 italic">
+                "One Group. Multiple Businesses."
+              </p>
+            )}
             <div className="flex space-x-4">
               {[Twitter, Linkedin, Facebook].map((Icon, idx) => (
                 <a key={idx} href="#" className={`w-10 h-10 rounded-full glass-panel flex items-center justify-center text-slate-400 hover:text-white transition-all hover:bg-white/10`}>
@@ -91,20 +105,20 @@ export const Footer: React.FC = () => {
               <ul className="space-y-4">
                 <li>
                   <Link 
-                    to="/pharma" 
-                    state={{ fromHome: true }}
-                    className="text-slate-400 hover:text-neon-cyan transition-colors"
-                  >
-                    Pharma
-                  </Link>
-                </li>
-                <li>
-                  <Link 
                     to="/foods" 
                     state={{ fromHome: true }}
                     className="text-slate-400 hover:text-neon-green transition-colors"
                   >
                     Foods
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/pharma" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-cyan transition-colors"
+                  >
+                    Pharma
                   </Link>
                 </li>
                 <li>
@@ -125,6 +139,15 @@ export const Footer: React.FC = () => {
                     Tech
                   </Link>
                 </li>
+                <li>
+                  <Link 
+                    to="/education" 
+                    state={{ fromHome: true }}
+                    className="text-slate-400 hover:text-neon-purple transition-colors"
+                  >
+                    Education
+                  </Link>
+                </li>
               </ul>
             </div>
           )}
@@ -132,11 +155,11 @@ export const Footer: React.FC = () => {
           {/* Quick Links (Replacement for Divisions on subpages if needed, or just Contact) */}
           {!config.showDivisions && (
              <div>
-                <h4 className="font-display font-bold text-white mb-6">LEGAL</h4>
+                <h4 className="font-display font-bold text-white mb-6">QUICK LINKS</h4>
                 <ul className="space-y-4 text-slate-400">
-                  <li><a href="#" className="hover:text-white">Privacy Protocol</a></li>
+                  <li><Link to="/" className="hover:text-white">Home</Link></li>
+                  <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
                   <li><a href="#" className="hover:text-white">Terms of Use</a></li>
-                  <li><a href="#" className="hover:text-white">Compliance</a></li>
                 </ul>
              </div>
           )}
@@ -145,15 +168,24 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-display font-bold text-white mb-6">CONTACT</h4>
             <ul className="space-y-4 text-slate-400">
-              <li>HQ: Neo-Tokyo Dist. 9</li>
               <li>{config.contact}</li>
-              <li>+1 (555) 909-2077</li>
+              <li>Business Inquiries</li>
+              <li>Partnerships & Careers</li>
             </ul>
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-white/5 text-center text-slate-600 text-sm">
-          &copy; {new Date().getFullYear()} {config.brand === 'WALMUS' ? 'WalMus Enterprise' : config.brand}. All rights reserved.
+        {/* Disclaimer */}
+        {path === '/' && (
+          <div className="mt-12 pt-8 border-t border-white/5">
+            <p className="text-slate-500 text-sm text-center max-w-3xl mx-auto">
+              WalMus Group is an early-stage business group. Individual divisions operate independently under dedicated teams.
+            </p>
+          </div>
+        )}
+        
+        <div className="mt-8 pt-8 border-t border-white/5 text-center text-slate-600 text-sm">
+          &copy; {new Date().getFullYear()} {config.brand === 'WALMUS GROUP' ? 'WalMus Group' : config.brand}. All rights reserved.
         </div>
       </div>
     </footer>

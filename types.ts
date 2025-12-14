@@ -1,10 +1,17 @@
 export interface Division {
   id: string;
   name: string;
+  fullName: string;
   description: string;
+  industry: string;
+  productsOrServices: string;
+  targetCustomers: string;
+  team: string;
+  expansionPlans: string;
+  status: 'Launching Soon' | 'In Setup Phase';
   path: string;
   color: string;
-  iconName: 'Activity' | 'Utensils' | 'Shirt' | 'Code';
+  iconName: 'Activity' | 'Utensils' | 'Shirt' | 'Code' | 'GraduationCap';
   image: string;
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Hexagon, Activity, Utensils, Shirt, Code, LucideIcon } from 'lucide-react';
+import { Menu, X, Hexagon, Activity, Utensils, Shirt, Code, GraduationCap, LucideIcon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigation } from '../contexts/NavigationContext';
 
@@ -67,6 +67,18 @@ export const Navbar: React.FC = () => {
             { name: 'CONTACT', path: '#' },
           ]
         };
+      } else if (path.includes('/education')) {
+        return {
+          brand: 'WALMUS EDUCATION',
+          baseColor: 'text-neon-purple',
+          glowShadow: 'shadow-[0_0_10px_#a855f7]',
+          Icon: GraduationCap,
+          links: [
+            { name: 'COURSES', path: '#' },
+            { name: 'TRAINING', path: '#' },
+            { name: 'GUIDANCE', path: '#' },
+          ]
+        };
       }
     }
 
@@ -123,20 +135,34 @@ export const Navbar: React.FC = () => {
           { name: 'CONTACT', path: '#' },
         ]
       };
+    } else if (path.includes('/education')) {
+      return {
+        brand: 'WALMUS EDUCATION',
+        baseColor: 'text-neon-purple',
+        glowShadow: 'shadow-[0_0_10px_#a855f7]',
+        Icon: GraduationCap,
+        links: [
+          { name: 'MAIN', path: '/', withState: true },
+          { name: 'COURSES', path: '#' },
+          { name: 'TRAINING', path: '#' },
+          { name: 'GUIDANCE', path: '#' },
+        ]
+      };
     } else {
       // Default / Home
       return {
-        brand: 'WALMUS',
+        brand: 'WALMUS GROUP',
         baseColor: 'text-white',
         glowShadow: 'shadow-[0_0_10px_#06b6d4]',
         Icon: Hexagon,
         iconColor: 'text-neon-cyan', // specific override for home icon
         links: [
           { name: 'HOME', path: '/' },
-          { name: 'PHARMA', path: '/pharma', withState: true },
           { name: 'FOODS', path: '/foods', withState: true },
+          { name: 'PHARMA', path: '/pharma', withState: true },
           { name: 'GARMENTS', path: '/garments', withState: true },
           { name: 'TECH', path: '/tech', withState: true },
+          { name: 'EDUCATION', path: '/education', withState: true },
         ]
       };
     }
@@ -165,6 +191,9 @@ export const Navbar: React.FC = () => {
       'COLLECTION': 'collection',
       'TECH': 'tech',
       'FITTING': 'fitting',
+      'COURSES': 'products',
+      'TRAINING': 'products',
+      'GUIDANCE': 'products',
     };
     return sectionMap[name] || null;
   };
@@ -200,7 +229,7 @@ export const Navbar: React.FC = () => {
               >
                 <NavIcon className={`w-8 h-8 ${brandColor} fill-current/10`} />
               </motion.div>
-              <span className={`font-display text-2xl font-bold tracking-widest transition-colors ${config.brand === 'WALMUS' ? 'text-white group-hover:text-neon-cyan' : config.baseColor}`}>
+              <span className={`font-display text-2xl font-bold tracking-widest transition-colors ${config.brand === 'WALMUS GROUP' ? 'text-white group-hover:text-neon-cyan' : config.baseColor}`}>
                 {config.brand}
               </span>
             </div>
@@ -212,7 +241,7 @@ export const Navbar: React.FC = () => {
               >
                 <NavIcon className={`w-8 h-8 ${brandColor} fill-current/10`} />
               </motion.div>
-              <span className={`font-display text-2xl font-bold tracking-widest transition-colors ${config.brand === 'WALMUS' ? 'text-white group-hover:text-neon-cyan' : config.baseColor}`}>
+              <span className={`font-display text-2xl font-bold tracking-widest transition-colors ${config.brand === 'WALMUS GROUP' ? 'text-white group-hover:text-neon-cyan' : config.baseColor}`}>
                 {config.brand}
               </span>
             </Link>

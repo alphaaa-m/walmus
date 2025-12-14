@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shirt, Package, Users, ShoppingBag, TrendingUp, Heart, DollarSign } from 'lucide-react';
+import { GraduationCap, BookOpen, Users, Target, TrendingUp, Award, Briefcase, Lightbulb } from 'lucide-react';
 
-export const Garments: React.FC = () => {
+export const Education: React.FC = () => {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -13,20 +13,20 @@ export const Garments: React.FC = () => {
       {/* Hero */}
       <div className="relative h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://picsum.photos/1920/1080?random=203" alt="Fashion" className="w-full h-full object-cover opacity-20 filter hue-rotate-[240deg] contrast-125 blur-sm" />
+          <img src="https://picsum.photos/1920/1080?random=204" alt="Education" className="w-full h-full object-cover opacity-20 filter sepia-[.3] hue-rotate-[180deg] blur-sm" />
           <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/80 to-transparent" />
         </div>
         
         <div className="relative container mx-auto px-6 z-10">
           <div className="flex items-center gap-4 mb-4 text-neon-purple">
-             <Shirt className="w-8 h-8" />
-             <span className="font-display tracking-[0.3em]">CLOTHING & WEARABLES</span>
+             <GraduationCap className="w-8 h-8" />
+             <span className="font-display tracking-[0.3em]">SKILL-BASED EDUCATION</span>
           </div>
           <h1 className="font-display text-6xl md:text-8xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
-            WALMUS <span className="text-neon-purple">GARMENTS</span>
+            WALMUS <span className="text-neon-purple">EDUCATION</span>
           </h1>
           <p className="max-w-xl text-xl text-slate-300 border-l-2 border-neon-purple pl-6">
-            Quality clothing and wearable products including shirts, pants, and everyday wear. Focused on comfort, quality, and affordability.
+            Skill-based education division offering courses, professional training, career guidance, and educational programs to support professional development.
           </p>
         </div>
       </div>
@@ -39,22 +39,22 @@ export const Garments: React.FC = () => {
             BUSINESS OVERVIEW
           </h2>
           <p className="text-slate-400 max-w-2xl">
-            WalMus Garments is a clothing and wearables business offering quality shirts, pants, and everyday wear with a focus on comfort, quality, and affordability.
+            WalMus Education is a skill-based education division offering comprehensive courses, professional training, career guidance, and educational programs designed to support professional development and career advancement.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-slate-300 text-lg leading-relaxed">
-              Our mission is to provide quality clothing that combines comfort, durability, and style at affordable prices. We focus on everyday wear that meets the needs of modern consumers.
+              Our mission is to provide practical, skill-based education that empowers individuals to advance their careers and achieve their professional goals.
             </p>
             <p className="text-slate-400 leading-relaxed">
-              From shirts and pants to a complete range of everyday clothing, WalMus Garments is committed to delivering products that offer value, quality, and comfort.
+              We offer courses and training programs across various fields, with specialized support for technology and healthcare sectors. Our programs are designed by experienced teachers and instructors who understand the needs of modern professionals.
             </p>
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-neon-purple/20 blur-[50px] rounded-full" />
-            <img src="https://picsum.photos/600/600?random=500" alt="Clothing Collection" className="relative z-10 rounded-2xl border border-white/10 shadow-2xl" />
+            <img src="https://picsum.photos/600/600?random=501" alt="Education Programs" className="relative z-10 rounded-2xl border border-white/10 shadow-2xl" />
           </div>
         </div>
       </section>
@@ -67,28 +67,34 @@ export const Garments: React.FC = () => {
             PRODUCTS & SERVICES
           </h2>
           <p className="text-slate-400 max-w-2xl">
-            We offer a range of clothing and wearable products designed for everyday use.
+            We offer comprehensive educational programs and services to support professional development.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {[
             { 
-              title: 'Shirts', 
-              desc: 'Quality shirts in various styles and sizes for everyday wear and professional use.',
-              icon: Shirt,
+              title: 'Skill-Based Courses', 
+              desc: 'Comprehensive courses designed to develop practical skills and professional competencies.',
+              icon: BookOpen,
               color: 'text-neon-purple'
             },
             { 
-              title: 'Pants', 
-              desc: 'Comfortable and durable pants suitable for various occasions and activities.',
-              icon: Package,
+              title: 'Professional Training', 
+              desc: 'Specialized training programs for career advancement and skill enhancement.',
+              icon: Briefcase,
               color: 'text-neon-purple'
             },
             { 
-              title: 'Everyday Wear', 
-              desc: 'Complete range of everyday clothing items for daily comfort and style.',
-              icon: ShoppingBag,
+              title: 'Career Guidance', 
+              desc: 'Expert guidance and counseling to help individuals navigate their career paths.',
+              icon: Target,
+              color: 'text-neon-purple'
+            },
+            { 
+              title: 'Educational Programs', 
+              desc: 'Structured educational programs covering various professional fields and industries.',
+              icon: GraduationCap,
               color: 'text-neon-purple'
             },
           ].map((item, i) => {
@@ -112,14 +118,18 @@ export const Garments: React.FC = () => {
 
         <div className="glass-panel p-8 rounded-xl border border-neon-purple/20">
           <h3 className="font-display text-2xl font-bold mb-6 text-white flex items-center gap-3">
-            <Heart className="w-8 h-8 text-neon-purple" />
-            Our Focus Areas
+            <Lightbulb className="w-8 h-8 text-neon-purple" />
+            Specialized Training Support
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <p className="text-slate-300 mb-4">
+            WalMus Education can provide specialized training to support other WalMus Group divisions, including technology training for WalMus Tech and healthcare training for WalMus Pharma.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {[
-              { title: 'Quality', desc: 'Durable materials and construction for long-lasting wear' },
-              { title: 'Comfort', desc: 'Designed for comfort and ease of movement' },
-              { title: 'Affordability', desc: 'Competitive pricing without compromising on quality' },
+              { title: 'Tech Training', desc: 'Technology and software development training programs' },
+              { title: 'Healthcare Training', desc: 'Medical and pharmaceutical industry training' },
+              { title: 'Business Skills', desc: 'Professional development and business skills training' },
+              { title: 'Industry-Specific', desc: 'Tailored training for specific industries and roles' },
             ].map((item, i) => (
               <div key={i} className="flex gap-4">
                 <div className="w-2 h-2 rounded-full bg-neon-purple mt-2 flex-shrink-0" />
@@ -141,16 +151,16 @@ export const Garments: React.FC = () => {
             TARGET CUSTOMERS
           </h2>
           <p className="text-slate-400 max-w-2xl">
-            We serve general consumers seeking quality, comfortable, and affordable clothing.
+            We serve individuals seeking professional development, skill enhancement, and career advancement.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
-            { title: 'Everyday Consumers', desc: 'Individuals looking for quality everyday clothing that offers value and comfort', icon: '👔' },
-            { title: 'Budget-Conscious Shoppers', desc: 'Customers seeking affordable clothing without compromising on quality', icon: '💰' },
-            { title: 'Style-Conscious Buyers', desc: 'Consumers who want comfortable, well-made clothing for daily wear', icon: '✨' },
-            { title: 'Families', desc: 'Families looking for reliable, affordable clothing options for all members', icon: '👨‍👩‍👧‍👦' },
+            { title: 'Career Changers', desc: 'Individuals looking to transition into new fields or industries', icon: '🔄' },
+            { title: 'Skill Seekers', desc: 'Professionals wanting to enhance existing skills or learn new ones', icon: '📚' },
+            { title: 'Recent Graduates', desc: 'New graduates seeking practical skills and career guidance', icon: '🎓' },
+            { title: 'Career Advancers', desc: 'Professionals aiming to advance in their current careers', icon: '📈' },
           ].map((customer, i) => (
             <div key={i} className="glass-panel p-8 rounded-xl border-l-4 border-neon-purple/50 hover:border-neon-purple transition-all">
               <div className="text-4xl mb-4">{customer.icon}</div>
@@ -169,7 +179,7 @@ export const Garments: React.FC = () => {
             TEAM & OPERATIONS
           </h2>
           <p className="text-slate-400 max-w-2xl">
-            Our operations are managed by retail and operations teams specializing in garment manufacturing and distribution.
+            Our operations are managed by teachers and instructors with expertise in curriculum development and professional training.
           </p>
         </div>
 
@@ -181,11 +191,11 @@ export const Garments: React.FC = () => {
             </h3>
             <div className="space-y-4">
               {[
-                'Retail and operations teams with garment industry expertise',
-                'Manufacturing and quality control specialists',
-                'Design and product development personnel',
-                'Supply chain and logistics coordination',
-                'Customer service and sales teams'
+                'Teachers and instructors with industry experience',
+                'Curriculum developers and educational designers',
+                'Career counselors and guidance specialists',
+                'Training coordinators and program managers',
+                'Subject matter experts across various fields'
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <div className="w-2 h-2 rounded-full bg-neon-purple mt-2 flex-shrink-0" />
@@ -196,16 +206,16 @@ export const Garments: React.FC = () => {
           </div>
           <div>
             <h3 className="font-display text-2xl font-bold mb-6 text-white flex items-center gap-3">
-              <Shirt className="w-8 h-8 text-neon-purple" />
+              <GraduationCap className="w-8 h-8 text-neon-purple" />
               Operational Focus
             </h3>
             <div className="space-y-4">
               {[
-                'Maintaining quality standards in manufacturing',
-                'Ensuring comfortable and durable products',
-                'Managing efficient supply chains and distribution',
-                'Providing affordable pricing for customers',
-                'Building strong supplier relationships'
+                'Developing practical and relevant curriculum',
+                'Delivering high-quality instruction and training',
+                'Providing career guidance and support',
+                'Ensuring student success and outcomes',
+                'Building partnerships with industry professionals'
               ].map((item, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <div className="w-2 h-2 rounded-full bg-neon-purple mt-2 flex-shrink-0" />
@@ -225,31 +235,31 @@ export const Garments: React.FC = () => {
             FUTURE EXPANSION PLANS
           </h2>
           <p className="text-slate-400 max-w-2xl">
-            Our roadmap for growth and expansion in the clothing and apparel industry.
+            Our roadmap for growth and expansion in the education and training industry.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { 
-              title: 'Expand Product Lines', 
-              desc: 'Introduce new clothing categories and expand our range of shirts, pants, and everyday wear.',
-              icon: Package
+              title: 'Develop Comprehensive Course Catalog', 
+              desc: 'Build a wide range of courses covering various professional fields and skill areas.',
+              icon: BookOpen
             },
             { 
-              title: 'Establish Retail Presence', 
-              desc: 'Open physical retail locations and develop online sales channels to reach more customers.',
-              icon: ShoppingBag
+              title: 'Establish Training Facilities', 
+              desc: 'Set up physical and online training facilities to deliver educational programs.',
+              icon: Award
             },
             { 
-              title: 'Develop Online Sales', 
-              desc: 'Build robust e-commerce platforms and online presence for convenient customer access.',
+              title: 'Support Tech and Pharma Divisions', 
+              desc: 'Develop specialized training programs to support WalMus Tech and WalMus Pharma divisions.',
+              icon: Briefcase
+            },
+            { 
+              title: 'Expand Educational Reach', 
+              desc: 'Grow our student base and expand educational offerings to serve more learners.',
               icon: TrendingUp
-            },
-            { 
-              title: 'Scale Manufacturing', 
-              desc: 'Increase production capacity while maintaining quality standards and affordability.',
-              icon: DollarSign
             },
           ].map((plan, i) => {
             const IconComponent = plan.icon;
@@ -273,3 +283,4 @@ export const Garments: React.FC = () => {
     </motion.div>
   );
 };
+

@@ -56,17 +56,17 @@ export const Home: React.FC = () => {
         {/* Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-        <div className="relative z-10 container mx-auto px-6 text-center">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display font-medium text-neon-cyan tracking-[0.5em] mb-4 text-lg">WELCOME TO THE FUTURE</h2>
-            <h1 className="font-display text-6xl md:text-8xl font-black text-white mb-8 leading-tight">
-              WALMUS<span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple">.CORP</span>
+            <h2 className="font-display font-medium text-neon-cyan tracking-[0.3em] sm:tracking-[0.5em] mb-4 text-sm sm:text-lg">WELCOME TO THE FUTURE</h2>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-8 leading-tight px-2">
+              <span className="inline-block">WALMUS</span><span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple inline-block">.CORP</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12">
+            <p className="max-w-2xl mx-auto text-slate-400 text-base sm:text-lg md:text-xl leading-relaxed mb-12 px-2">
               Integrating biology, technology, and lifestyle. We build the infrastructure for the next stage of human evolution.
             </p>
           </motion.div>
